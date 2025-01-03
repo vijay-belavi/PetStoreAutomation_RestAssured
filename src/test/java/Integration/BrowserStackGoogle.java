@@ -10,8 +10,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStackGoogle {
 
-    public static final String USERNAME = "vijaybelavi_lavdDc";
-    public static final String AUTOMATE_KEY = "x3PsWNHFa3xZuhsx25ae";
+    public static final String USERNAME = "newtest_kJ98gW";
+    public static final String AUTOMATE_KEY = "vu5WrGaKu7QD2qDAo1dG";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY
             + "@hub-cloud.browserstack.com/wd/hub";
 

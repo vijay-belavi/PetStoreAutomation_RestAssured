@@ -7,12 +7,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.windows.WindowsDriver;
 
-public class OpenDesktopApplication {
-	public static void main(String[] args) throws Throwable {
-
-	
-		try {
-
+public class Test {
+			public static void main(String[] args) throws Throwable {
 			// Set Desired Capabilities
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("appium:platformName", "Windows");
@@ -26,10 +22,5 @@ public class OpenDesktopApplication {
 
 			// Quit driver
 			driver.quit();
-		} catch (Exception e) {
-			System.out.println(e.getLocalizedMessage());
-
 		}
-
 	}
-}

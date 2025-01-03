@@ -1,42 +1,52 @@
 package Integration;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import io.appium.java_client.android.AndroidDriver;
+
 public class OpenAndroidAppOnBrowserStack {
     public static void main(String[] args) throws MalformedURLException {
         // Set your BrowserStack credentials
-        String USERNAME = "newtesting_NOZHxI";
-        String ACCESS_KEY = "38KLHqvsVsKrQFDMFNp1";
+        String USERNAME = "newtest_kJ98gW";
+        String ACCESS_KEY = "vu5WrGaKu7QD2qDAo1dG";
 
         // URL to BrowserStack hub
-        String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+        String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
-        // Set the DesiredCapabilities using W3C syntax
-        Map<String, Object> browserstackOptions = new HashMap<String, Object>();
+        // Set the BrowserStack options
+        Map<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("userName", USERNAME);
         browserstackOptions.put("accessKey", ACCESS_KEY);
-        browserstackOptions.put("appium:app", "bs://c63f8c1ff88d59e2a653c41326c97081f4a95ef4"); // Replace with the app_url received from the upload
         browserstackOptions.put("deviceName", "Samsung Galaxy S23 Ultra");
-        browserstackOptions.put("os_version", "13.0");
-
+        browserstackOptions.put("osVersion", "13.0");
+        browserstackOptions.put("app", "bs://e8339cdbc1a00d07badaff93331518646fc3f0b5");
+        
+        
+        
+        // Set DesiredCapabilities
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("bstack:options", browserstackOptions);
-        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("platformName", "ANDROID");
 
         // Create the driver instance
-        AppiumDriver driver = new AndroidDriver(new URL(URL), capabilities);
+        AndroidDriver driver = (AndroidDriver) (new RemoteWebDriver(new URL(URL), capabilities));
 
-        // Interact with the app (add your test code here)
-        // Example: Find an element and interact with it
-        // driver.findElement(By.id("element_id")).click();
-
-        // Close the app
-        driver.quit();
+        try {
+            // Example: Interact with the app
+            System.out.println("Driver initialized successfully on BrowserStack!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Close the app
+            if (driver != null) {
+                driver.quit();
+            }
+        }
     }
 }
