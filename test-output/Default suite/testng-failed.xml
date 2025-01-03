@@ -3,11 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="testNg.Test1">
         <methods>
           <include name="test"/>
         </methods>
       </class> <!-- testNg.Test1 -->
+=======
+      <class name="Api_Test.DataDrivenTest">
+        <methods>
+          <include name="testPostUser"/>
+        </methods>
+      </class> <!-- Api_Test.DataDrivenTest -->
+>>>>>>> branch 'master' of https://github.com/vijay-belavi/PetStoreAutomation_RestAssured.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

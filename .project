@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>Automation</name>
+=======
+	<name>PetStoreAutomation_RestAssured</name>
+>>>>>>> branch 'master' of https://github.com/vijay-belavi/PetStoreAutomation_RestAssured.git
 	<comment></comment>
 	<projects>
 	</projects>
